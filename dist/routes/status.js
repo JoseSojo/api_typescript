@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.router = void 0;
+const express_1 = require("express");
+const status_controller_1 = require("../controllers/status.controller");
+const router = (0, express_1.Router)();
+exports.router = router;
+router.get('/', status_controller_1.TestingStatus);
+router.put('/delete/:id', status_controller_1.ChangeDeleteCtrl);
+router.put('/ignore/:id', status_controller_1.ChangeIgnoreCtrl);
+router.put('/bloked/:id', status_controller_1.ChangeBlokedCtrl);
+router.put('/published/:id', status_controller_1.ChangePublishedCtrl);
